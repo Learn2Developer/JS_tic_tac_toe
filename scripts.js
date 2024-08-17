@@ -20,7 +20,7 @@ function btn_press(clicked_id) {
         // If not, then it runs code to change button to an O
     } else {
         var intro_para = document.getElementById("intro");
-        intro_para.innerHTML = intro_para.innerText = "&nbsp; \n &nbsp;"
+        intro_para.innerHTML = intro_para.innerText = "Tic-Tac-Toe"
         button.innerText = "O";
 
         // It checks the index of the button you pressed, and removes it from the already_clicked array
@@ -34,10 +34,13 @@ function btn_press(clicked_id) {
         already_clicked.splice(index, 1);
 
         if (check_win(o_array) == true) {
-            intro_para.innerText = "Game over \n" + o_array[0] + " Wins!!!"
+            intro_para.innerText = "Game Over \n '" + o_array[0] + "' Wins!!!"
+            var btn_array = document.getElementsByClassName("btn");
+            disable_btns();
         } else {
-            if (check_tie() == true) {
+            if (already_clicked.length == 0) {
                 intro_para.innerText = "Game Over \n Tie Game."
+                disable_btns();
             }
         }
 
@@ -56,7 +59,8 @@ function btn_press(clicked_id) {
         // Remove the btn_id from already_clicked array.
         already_clicked.splice(index_rand, 1);
         if (check_win(x_array) == true) {
-            intro_para.innerText = "Game over \n" + x_array[0] + " Wins!!!"
+            intro_para.innerText = "Game Over \n '" + x_array[0] + "' Wins!!!"
+            disable_btns();
         } else {
             return false;
         }
@@ -88,8 +92,11 @@ function check_win(array) {
     }
 }
 
-function check_tie() {
-    if (already_clicked.length == 0) {
-        return true;
+function disable_btns() {
+    var btn_array = document.getElementsByClassName("btn");
+
+    // Loop through the btn_array and add the attribute to each class.
+    for (let btns in btn_array) {
+        btn_array[btns].setAttribute('disabled', '');
     }
 }
