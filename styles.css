@@ -1,0 +1,21 @@
+body {
+    background-color: aliceblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+#gameboard {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    display: inline;
+    font-size: 40px;
+}
