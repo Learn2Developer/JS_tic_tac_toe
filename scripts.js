@@ -1,12 +1,6 @@
-// Keeps track of turn number for execution of X's turn.
-var turn_num = 0;
-
-// Strings
-var already_clicked = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var available_btns = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var o_array = ["O"];
 var x_array = ["X"];
-
-document.addEventListener("button")
 
 // Function runs when any button element is clicked
 function btn_press(clicked_id) {
@@ -23,41 +17,39 @@ function btn_press(clicked_id) {
         intro_para.innerHTML = intro_para.innerText = "Tic-Tac-Toe"
         button.innerText = "O";
 
-        // It checks the index of the button you pressed, and removes it from the already_clicked array
-        var index = already_clicked.indexOf(clicked_id);
+        // It checks the index of the button you pressed, and removes it from the available_btns array
+        var index = available_btns.indexOf(clicked_id);
 
         // Push the btn_id to the o_array.
-        o_array.push(already_clicked[index]);
+        o_array.push(available_btns[index]);
         console.log(o_array);
 
-        // Remove that btn_id from the already_clicked array.
-        already_clicked.splice(index, 1);
+        // Remove that btn_id from the available_btns array.
+        available_btns.splice(index, 1);
 
         if (check_win(o_array) == true) {
             intro_para.innerText = "Game Over \n '" + o_array[0] + "' Wins!!!"
             var btn_array = document.getElementsByClassName("btn");
             disable_btns();
         } else {
-            if (already_clicked.length == 0) {
-                intro_para.innerText = "Game Over \n Tie Game."
+            if (available_btns.length == 0) {
+                intro_para.innerText = "Game Over \n Tie Game"
                 disable_btns();
             }
         }
 
-        // Selecting a random number between 0 and the length of the already_clicked array.
-        var index_rand = Math.floor(Math.random() * (already_clicked.length));
-        var x_button = document.getElementById(already_clicked[index_rand]);
+        // Selecting a random number between 0 and the length of the available_btns array.
+        var index_rand = Math.floor(Math.random() * (available_btns.length));
+        var x_button = document.getElementById(available_btns[index_rand]);
 
-        // Changes button to an O.
-        console.log(x_button);
+        // Changes button to an X.
         x_button.innerText = "X";
 
         // Push the btn_id to the x_array.
-        x_array.push(already_clicked[index_rand]);
-        console.log(x_array);
+        x_array.push(available_btns[index_rand]);
 
-        // Remove the btn_id from already_clicked array.
-        already_clicked.splice(index_rand, 1);
+        // Remove the btn_id from available_btns array.
+        available_btns.splice(index_rand, 1);
         if (check_win(x_array) == true) {
             intro_para.innerText = "Game Over \n '" + x_array[0] + "' Wins!!!"
             disable_btns();
@@ -67,7 +59,7 @@ function btn_press(clicked_id) {
     }
 }
 
-
+// Function will check all possible winning states for the game.
 function check_win(array) {
     if (array.length <= 3) {
         return false;
@@ -95,8 +87,13 @@ function check_win(array) {
 function disable_btns() {
     var btn_array = document.getElementsByClassName("btn");
 
-    // Loop through the btn_array and add the attribute to each class.
+    // Loop through the btn_array and add the disabled attribute to each button.
     for (let btns in btn_array) {
         btn_array[btns].setAttribute('disabled', '');
     }
+}
+
+function refresh() {
+    const refresh_btn = document.getElementById("refresh_btn");
+    window.location.reload();
 }
