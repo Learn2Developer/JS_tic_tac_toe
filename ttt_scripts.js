@@ -10,10 +10,9 @@ function btn_press(clicked_id) {
     if (button.textContent == "O" || button.textContent == "X") {
         alert("That square is taken.");
 
-
         // If not, then it runs code to change button to an O
     } else {
-        var intro_para = document.getElementById("intro");
+        var intro_para = document.getElementById("ttt_intro");
         intro_para.innerHTML = intro_para.innerText = "Tic-Tac-Toe"
         button.innerText = "O";
 
@@ -85,7 +84,7 @@ function check_win(array) {
 }
 
 function disable_btns() {
-    var btn_array = document.getElementsByClassName("btn");
+    var btn_array = document.getElementsByClassName("ttt_btn");
 
     // Loop through the btn_array and add the disabled attribute to each button.
     for (let btns in btn_array) {

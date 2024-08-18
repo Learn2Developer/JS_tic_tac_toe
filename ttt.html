@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/ttt_scripts.js"></script>
+</head>
+
+<body>
+    <div class="intro">
+        <h1 id="ttt_intro">Tic-Tac-Toe <br>Make the first move!</h1>
+    </div>
+
+    <div id="ttt_gameboard">
+        <button class="ttt_btn" id="1" onclick="btn_press(this.id)">&nbsp;</button><button class="ttt_btn" id="2"
+            onclick="btn_press(this.id)">&nbsp;</button><button class="ttt_btn" id="3"
+            onclick="btn_press(this.id)">&nbsp;</button>
+        <br>
+        <button class="ttt_btn" id="4" onclick="btn_press(this.id)">&nbsp;</button><button class="ttt_btn" id="5"
+            onclick="btn_press(this.id)">&nbsp;</button><button class="ttt_btn" id="6"
+            onclick="btn_press(this.id)">&nbsp;</button>
+        <br>
+        <button class="ttt_btn" id="7" onclick="btn_press(this.id)">&nbsp;</button><button class="ttt_btn" id="8"
+            onclick="btn_press(this.id)">&nbsp;</button><button class="ttt_btn" id="9"
+            onclick="btn_press(this.id)">&nbsp;</button>
+        <br>
+    </div>
+    <div id="refresh_div"><button class="refresh" id="refresh_btn" onclick="refresh()">Restart</button></div>
+</body>
+<footer><a href="/index.html">Home</a></footer>
+
+</html>
