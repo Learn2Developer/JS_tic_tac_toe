@@ -1,9 +1,36 @@
+/* General CSS settings */
 body {
     background-color: rgb(110, 182, 246);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
 
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    word-wrap: normal;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li {
+    list-style: none;
+    align-items: center;
+}
+
+footer {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 0%;
+}
+
+/* Home page settings */
 .index_intro {
     width: 500px;
     margin-left: auto;
@@ -13,6 +40,7 @@ body {
     border-color: black;
 }
 
+/* Tic-Tac-Toe settings */
 #ttt_intro {
     height: 80px;
     background-color: rgb(146, 198, 244);
@@ -20,6 +48,20 @@ body {
     margin-left: auto;
     margin-right: auto;
     border-radius: 3px;
+}
+
+#ttt_gameboard {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button,
+.ttt_btn {
+    height: 100px;
+    width: 100px;
+    display: inline;
+    font-size: 40px;
 }
 
 #refresh_div {
@@ -35,35 +77,12 @@ body {
     font-size: 20px;
 }
 
-h1 {
-    text-align: center;
-}
-
-h2 {
-    text-align: center;
-    word-wrap: normal;
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#ttt_gameboard {
+/* Sudoku settings */
+#sudoku_board {
     max-width: fit-content;
     margin-left: auto;
     margin-right: auto;
 
-}
-
-button {
-    height: 50px;
-    width: 50px;
-    display: inline;
-    font-size: 40px;
-}
-
-li {
-    list-style: none;
-    align-items: center;
 }
 
 .square {
@@ -75,20 +94,23 @@ li {
     display: block;
 }
 
-#row_1 {
-    display: inline-block;
-    height: 300px;
-    border: 1px solid black;
-}
-
 #row {
     border: 1px solid black;
+    padding: 0%;
+    margin: 0%;
 }
 
-footer {
+button,
+#square {
+    height: 50px;
+    width: 50px;
+    display: inline;
+    font-size: 40px;
+}
+
+.num_select {
     max-width: fit-content;
+    margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
-    bottom: 0%;
 }
