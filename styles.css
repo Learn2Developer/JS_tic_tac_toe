@@ -100,12 +100,25 @@ button,
     margin: 0%;
 }
 
-button,
-#square {
+.puzzle {
+    width: 550px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
     height: 50px;
     width: 50px;
-    display: inline;
-    font-size: 40px;
+}
+
+button,
+#square {
+    width: 100px;
+    height: 20px;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 .num_select_div {
@@ -113,4 +126,16 @@ button,
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }
