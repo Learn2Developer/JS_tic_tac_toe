@@ -110,6 +110,10 @@ button,
 input {
     height: 50px;
     width: 50px;
+    padding-left: auto;
+    padding-right: auto;
+    text-align: center;
+    font-size: 30px;
 }
 
 button,
